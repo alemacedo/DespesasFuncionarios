@@ -1,0 +1,62 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	controllerName="DespesasFuncionarios.controller.DespesasDiarias" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+	<App>
+		<pages>
+			<Page id="despesaDiaria" showNavButton="true" navButtonPress="OnNavBack" showFooter="true" floatingFooter="true">
+				<headerContent>
+					<Image src="/webapp/img/Logo.png" press="press" height="50px"/>
+				</headerContent>
+				<subHeader>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<core:Icon src="sap-icon://expense-report"/>
+						<Text text="Total"/>
+					</Toolbar>
+				</subHeader>
+				<content>
+					<sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form"
+						xmlns:sap.ui.core="sap.ui.core" id="simpleForm">
+						<sap.ui.layout.form:content>
+							<l:VerticalLayout>
+								<Panel class="panel" headerText="Data" expandable="true" expanded="true">
+									<!--<DatePicker dateValue="{/date}" id="campo_data" width="80%" minDate="{path: '/minDate'}" maxDate="{path: '/maxDate'}"/>-->
+									<Label text="" visible="true" id="recebeNovaData"/>
+								</Panel>
+								<Panel class="panel" headerText="Veículo" expandable="true">
+									<Text text="R$ KM diário" id="lbl_kmDiario"/>
+									<Input width="80%" id="txt_kmDiario"/>
+									<Text text="Pedagio" id="lbl_pedagio"/>
+									<Input width="80%" id="txt_pedagio"/>
+									<Text text="Estacionamento" id="lbl_estacionamento"/>
+									<Input width="80%" id="txt_estacionamento"/>
+								</Panel>
+								<Panel class="panel" headerText="Alimentação" expandable="true">
+									<Text text="Café da manhã" id="lbl_cafe"/>
+									<Input width="80%" id="txt_cafe"/>
+									<Text text="Almoço" id="lbl_almoco"/>
+									<Input width="80%" id="txt_almoco"/>
+									<Text text="Jantar" id="lbl_jantar"/>
+									<Input width="80%" id="txt_jantar"/>
+								</Panel>
+								<Panel class="panel" headerText="Diversos" expandable="true">
+									<Text text="Hospedagem" id="lbl_hosp"/>
+									<Input width="80%" id="txt_hosp"/>
+									<Text text="Taxi" id="lbl_taxi"/>
+									<Input width="80%" id="txt_taxi"/>
+									<Text text="Outros" id="lbl_outros"/>
+									<Input width="80%" id="txt_outros"/>
+								</Panel>
+							</l:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Próximo" press="onPressProximo"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,22 @@
+<mvc:View controllerName="DespesasFuncionarios.controller.Tiles" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="{i18n>v1Title}">
+				<headerContent>
+					<Image src="/webapp/img/Logo.png" width="130px" densityAware="true"/>
+				</headerContent>
+				<content>
+					<TileContent>
+						<StandardTile title="NOVO RELATÓRIO DE DESPESAS" info="Pedir reembolso" icon="sap-icon://create-form"
+						press="onNovoRelatorioPress"/>
+					</TileContent>
+					<TileContent>
+						<StandardTile title="MEUS RELATÓRIOS DE DESPESAS" info="Situação de pedidos" icon="sap-icon://expense-report"
+						press="onListaRelatoriosPress"/>
+					</TileContent>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

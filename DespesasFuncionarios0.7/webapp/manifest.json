@@ -1,0 +1,133 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "DespesasFuncionarios",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZCONTROLEDESPESAS_SRV": {
+				"uri": "/sap/opu/odata/sap/ZCONTROLEDESPESAS_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "DespesasFuncionarios.view.Tiles",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "DespesasFuncionarios.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "DespesasFuncionarios.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "Tiles",
+					"target": "Tiles"
+				},
+				{
+					"pattern": "NovaDespesa",
+					"name": "NovaDespesa",
+					"target": "NovaDespesa"
+				},
+				{
+					"pattern": "DespesasDiarias",
+					"name": "DespesasDiarias",
+					"target": "DespesasDiarias"
+				},
+				{
+					"pattern": "Checkout",
+					"name": "Checkout",
+					"target": "Checkout"
+				}
+			],
+			"targets": {
+				"Tiles": {
+					"viewName": "Tiles",
+					"viewLevel": 1
+				},
+				"NovaDespesa": {
+					"viewName": "NovaDespesa",
+					"viewLevel": 2
+				},
+				"DespesasDiarias": {
+					"viewName": "DespesasDiarias",
+					"viewLevel": 3
+				},
+				"Checkout": {
+					"viewName": "Checkout",
+					"viewLevel": 4
+				}
+			}
+		}
+	}
+}

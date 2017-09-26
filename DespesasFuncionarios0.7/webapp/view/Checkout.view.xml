@@ -1,0 +1,72 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	controllerName="DespesasFuncionarios.controller.Checkout" displayBlock="true" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+	<App>
+		<pages>
+			<Page id="checkout" showNavButton="true" navButtonPress="OnNavBack" showFooter="true" floatingFooter="true">
+				<headerContent>
+					<Image src="/webapp/img/Logo.png" press="press" height="50px"/>
+				</headerContent>
+				<subHeader>
+					<Toolbar>
+						<ToolbarSpacer/>
+						<core:Icon src="sap-icon://expense-report"/>
+						<Text text="Total"/>
+						<ObjectNumber number="0" unit="REA"/>
+					</Toolbar>
+				</subHeader>
+				<content>
+					<ObjectHeader title="Cliente">
+						<attributes>
+							<ObjectAttribute title="Projeto" text="Teste"/>
+							<ObjectAttribute title="Mês da despesa" text="Teste"/>
+							<ObjectAttribute title="Reembolso pelo cliente" text="Teste"/>
+						</attributes>
+					</ObjectHeader>
+					<Table id="listaItems">
+						<columns>
+							<Column hAlign="Begin">
+								<Text text="Data"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="R$ KM diário"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Pedágio"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Estacionamento"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Café da manhã"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Almoço"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Jantar"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Hospedagem"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Táxi"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Outros"/>
+							</Column>
+							<Column hAlign="Begin">
+								<Text text="Total"/>
+							</Column>
+						</columns>
+					</Table>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Salvar despesas" type="Accept" press="onPressSalvar"/>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
